@@ -40,14 +40,14 @@ for i in range(len(file_root_list)):
         filename = filename[0]
     
     args = (
-            'PRODUCT/latitude', 
-            'PRODUCT/longitude',
+            'PRODUCT/longitude', 
+            'PRODUCT/latitude',
             'PRODUCT/nitrogendioxide_tropospheric_column',
             filename
             )
     region_limit = [12, -100, 31, -80]
     plot_granule_tropomi_no2(*args, region_limit=region_limit,
             xtick=np.arange(-180,180.1,5),
-            ytick=np.arange(-90,90.1,2),
+            ytick=np.arange(-90,90.1,2), cl_res='10m',
             vmax=0.00006, vmin=0)
     plt.savefig('test.png', format='png', dpi=300)
